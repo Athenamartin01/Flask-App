@@ -4,9 +4,9 @@ from flask import render_template,request
 
 @app.route('/add')
 def add():
-    new_game = Games(name="New Game")
-    db.session.add(new_game)
-    db.session.commit()
+    new_game = Games(name="New Game") #creates a new record for the table
+    db.session.add(new_game) #adds it to the table
+    db.session.commit() #commits the changes to the db
     return "Added new game to database"
 
 @app.route('/read')
